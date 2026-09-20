@@ -212,16 +212,16 @@
         .feedback-marquee-track {
             display: flex;
             width: max-content;
-            animation: feedbackMarquee 36s linear infinite;
+            animation: feedbackMarquee 42s linear infinite;
         }
 
-        .feedback-marquee-container:hover .feedback-marquee-track {
+        .feedback-marquee-track:hover {
             animation-play-state: paused;
         }
 
         @media (max-width: 768px) {
             .feedback-marquee-track {
-                animation-duration: 26s;
+                animation-duration: 32s;
             }
         }
     </style>
@@ -590,236 +590,364 @@
                 </p>
             </div>
 
-            <!-- Grid de Feedbacks (4 Cards em Grid Responsivo 2x2) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto reveal">
-                
-                <!-- Feedback 1: CNB Esports -->
-                <div class="relative bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_40px_rgba(229,57,53,0.12)] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(229,57,53,0.25)]">
-                    <div>
-                        <!-- Aspas e Topo -->
-                        <div class="flex items-center justify-between mb-6">
-                            <!-- Estrelas e Tag da Organização -->
-                            <div class="flex items-center gap-3 flex-wrap">
-                                <div class="flex gap-1 text-spider-red">
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
+            <!-- Carrossel Contínuo de Feedbacks (Marquee com Pausa no Hover) -->
+            <div class="relative w-full overflow-hidden reveal">
+                <!-- Efeito fade nas laterais para suavizar entrada e saída -->
+                <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-spider-darker to-transparent z-20 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-spider-darker to-transparent z-20 pointer-events-none"></div>
+
+                <!-- Trilho do Marquee -->
+                <div class="feedback-marquee-track py-4">
+                    
+                    <!-- Bloco Original de Cards -->
+                    <div class="flex gap-6 pr-6 items-stretch">
+                        
+                        <!-- Feedback 1: CNB Esports -->
+                        <div class="w-[340px] sm:w-[400px] bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_35px_rgba(229,57,53,0.12)] flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <div class="flex items-center gap-2.5 flex-wrap">
+                                        <div class="flex gap-1 text-spider-red">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-spider-blue/10 border border-spider-blue/30 text-spider-blue font-bold tracking-wider uppercase flex items-center gap-1">
+                                            <i class="fas fa-shield-halved text-[10px]"></i> CNB Esports
+                                        </span>
+                                    </div>
+                                    <i class="fas fa-quote-right text-2xl text-spider-red/20"></i>
                                 </div>
-                                <span class="text-xs px-3 py-1 rounded-full bg-spider-blue/10 border border-spider-blue/30 text-spider-blue font-bold tracking-wider uppercase flex items-center gap-1.5">
-                                    <i class="fas fa-shield-halved text-xs"></i> CNB Esports
+                                <blockquote class="text-gray-200 text-sm sm:text-base font-medium leading-relaxed italic mb-6">
+                                    "A narração do Rian é diferenciada demais! Tem muita energia, emoção e consegue deixar cada round ainda mais insano. Dá gosto de acompanhar uma partida narrada por ele. Parabéns pelo trabalho e continue nessa pegada! 💥🙌"
+                                </blockquote>
+                            </div>
+                            <div class="pt-5 border-t border-white/10 flex items-center justify-between flex-wrap gap-2">
+                                <div>
+                                    <h4 class="font-heading font-black text-white text-base">Comercial CNB</h4>
+                                    <p class="text-xs text-gray-400 font-medium">Setor Comercial • <span class="text-spider-blue font-bold">CNB Esports</span></p>
+                                </div>
+                                <span class="inline-flex items-center gap-1 text-[11px] text-gray-400 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                                    <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
                                 </span>
                             </div>
-
-                            <i class="fas fa-quote-right text-3xl text-spider-red/20"></i>
                         </div>
 
-                        <!-- Texto do Feedback -->
-                        <blockquote class="text-gray-200 text-base font-medium leading-relaxed italic mb-8">
-                            "A narração do Rian é diferenciada demais! Tem muita energia, emoção e consegue deixar cada round ainda mais insano. Dá gosto de acompanhar uma partida narrada por ele. Parabéns pelo trabalho e continue nessa pegada! 💥🙌"
-                        </blockquote>
-                    </div>
-
-                    <!-- Autor do Feedback -->
-                    <div class="pt-6 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
-                        <div>
-                            <h4 class="font-heading font-black text-white text-base md:text-lg">
-                                Comercial CNB
-                            </h4>
-                            <p class="text-xs sm:text-sm text-gray-400 font-medium mt-0.5">
-                                Setor Comercial • <span class="text-spider-blue font-bold">CNB Esports</span>
-                            </p>
-                        </div>
-
-                        <span class="inline-flex items-center gap-1.5 text-xs text-gray-400 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
-                            <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Feedback 2: Rute (CEO da Cidade Bella) -->
-                <div class="relative bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_40px_rgba(229,57,53,0.15)] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(229,57,53,0.25)]">
-                    <div>
-                        <!-- Aspas e Topo -->
-                        <div class="flex items-center justify-between mb-6">
-                            <!-- Estrelas e Tag -->
-                            <div class="flex items-center gap-3 flex-wrap">
-                                <div class="flex gap-1 text-spider-red">
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
+                        <!-- Feedback 2: Rute (Cidade Bella) -->
+                        <div class="w-[340px] sm:w-[400px] bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_35px_rgba(229,57,53,0.15)] flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <div class="flex items-center gap-2.5 flex-wrap">
+                                        <div class="flex gap-1 text-spider-red">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold tracking-wider uppercase flex items-center gap-1">
+                                            <i class="fas fa-crown text-[10px]"></i> Cidade Bella
+                                        </span>
+                                    </div>
+                                    <i class="fas fa-quote-right text-2xl text-amber-500/20"></i>
                                 </div>
-                                <span class="text-xs px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold tracking-wider uppercase flex items-center gap-1.5">
-                                    <i class="fas fa-crown text-xs"></i> Cidade Bella
+                                <blockquote class="text-gray-200 text-sm sm:text-base font-medium leading-relaxed italic mb-6">
+                                    "O Rian é extremamente dedicado e manda muito bem no que faz! 🎙️🔥 Foi incrível contar com ele nos Fac x Fac e BellaCup da Cidade Bella. Cada participação dele fez a diferença e deixou os eventos ainda mais marcantes! Um talento que com certeza queremos ver em muitos outros eventos da Cidade Bella! 💛"
+                                </blockquote>
+                            </div>
+                            <div class="pt-5 border-t border-white/10 flex items-center justify-between flex-wrap gap-2">
+                                <div>
+                                    <h4 class="font-heading font-black text-white text-base">Rute</h4>
+                                    <p class="text-xs text-gray-400 font-medium">CEO • <span class="text-amber-400 font-bold">Cidade Bella</span></p>
+                                </div>
+                                <span class="inline-flex items-center gap-1 text-[11px] text-gray-400 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                                    <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
                                 </span>
                             </div>
-
-                            <i class="fas fa-quote-right text-3xl text-amber-500/20"></i>
                         </div>
 
-                        <!-- Texto do Feedback -->
-                        <blockquote class="text-gray-200 text-base font-medium leading-relaxed italic mb-8">
-                            "O Rian é extremamente dedicado e manda muito bem no que faz! 🎙️🔥 Foi incrível contar com ele nos Fac x Fac e BellaCup da Cidade Bella. Cada participação dele fez a diferença e deixou os eventos ainda mais marcantes! Um talento que com certeza queremos ver em muitos outros eventos da Cidade Bella! 💛"
-                        </blockquote>
-                    </div>
-
-                    <!-- Autor do Feedback -->
-                    <div class="pt-6 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
-                        <div>
-                            <h4 class="font-heading font-black text-white text-base md:text-lg">
-                                Rute
-                            </h4>
-                            <p class="text-xs sm:text-sm text-gray-400 font-medium mt-0.5">
-                                CEO • <span class="text-amber-400 font-bold">Cidade Bella</span>
-                            </p>
-                        </div>
-
-                        <span class="inline-flex items-center gap-1.5 text-xs text-gray-400 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
-                            <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Feedback 3: Nanda (Streamer na Twitch) -->
-                <div class="relative bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_40px_rgba(145,70,255,0.15)] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(145,70,255,0.25)]">
-                    <div>
-                        <!-- Aspas e Topo -->
-                        <div class="flex items-center justify-between mb-6">
-                            <!-- Estrelas e Tag -->
-                            <div class="flex items-center gap-3 flex-wrap">
-                                <div class="flex gap-1 text-spider-red">
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
+                        <!-- Feedback 3: Nanda (Streamer) -->
+                        <div class="w-[340px] sm:w-[400px] bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_35px_rgba(145,70,255,0.15)] flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <div class="flex items-center gap-2.5 flex-wrap">
+                                        <div class="flex gap-1 text-spider-red">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-[#9146FF]/10 border border-[#9146FF]/30 text-[#9146FF] font-bold tracking-wider uppercase flex items-center gap-1">
+                                            <i class="fab fa-twitch text-[10px]"></i> Torneio & Live
+                                        </span>
+                                    </div>
+                                    <i class="fas fa-quote-right text-2xl text-[#9146FF]/20"></i>
                                 </div>
-                                <span class="text-xs px-3 py-1 rounded-full bg-[#9146FF]/10 border border-[#9146FF]/30 text-[#9146FF] font-bold tracking-wider uppercase flex items-center gap-1.5">
-                                    <i class="fab fa-twitch text-xs"></i> Torneio & Live
+                                <blockquote class="text-gray-200 text-sm sm:text-base font-medium leading-relaxed italic mb-6">
+                                    "O Rian é um ótimo narrador! Muito profissional, simpático e super divertido de trabalhar. Organizei um campeonato de VALORANT e ele foi nosso narrador, entregando um trabalho incrível. Todos adoraram a narração! Recomendo MUITO, não irão se arrepender."
+                                </blockquote>
+                            </div>
+                            <div class="pt-5 border-t border-white/10 flex items-center justify-between flex-wrap gap-2">
+                                <div>
+                                    <h4 class="font-heading font-black text-white text-base">Nanda</h4>
+                                    <p class="text-xs text-gray-400 font-medium"><span class="text-[#9146FF] font-bold">Streamer</span> na Twitch</p>
+                                </div>
+                                <span class="inline-flex items-center gap-1 text-[11px] text-gray-400 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                                    <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
                                 </span>
                             </div>
-
-                            <i class="fas fa-quote-right text-3xl text-[#9146FF]/20"></i>
                         </div>
 
-                        <!-- Texto do Feedback -->
-                        <blockquote class="text-gray-200 text-base font-medium leading-relaxed italic mb-8">
-                            "O Rian é um ótimo narrador! Muito profissional, simpático e super divertido de trabalhar. Organizei um campeonato de VALORANT e ele foi nosso narrador, entregando um trabalho incrível. Todos adoraram a narração! Recomendo MUITO, não irão se arrepender."
-                        </blockquote>
-                    </div>
-
-                    <!-- Autor do Feedback -->
-                    <div class="pt-6 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
-                        <div>
-                            <h4 class="font-heading font-black text-white text-base md:text-lg">
-                                Nanda
-                            </h4>
-                            <p class="text-xs sm:text-sm text-gray-400 font-medium mt-0.5">
-                                <span class="text-[#9146FF] font-bold">Streamer</span> na Twitch
-                            </p>
-                        </div>
-
-                        <span class="inline-flex items-center gap-1.5 text-xs text-gray-400 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
-                            <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Feedback 4: Marcos Marksvb.dev -->
-                <div class="relative bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_40px_rgba(21,101,192,0.12)] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(21,101,192,0.25)]">
-                    <div>
-                        <!-- Aspas e Topo -->
-                        <div class="flex items-center justify-between mb-6">
-                            <!-- Estrelas e Tag -->
-                            <div class="flex items-center gap-3 flex-wrap">
-                                <div class="flex gap-1 text-spider-red">
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
+                        <!-- Feedback 4: Rz (Midnight) -->
+                        <div class="w-[340px] sm:w-[400px] bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_35px_rgba(21,101,192,0.15)] flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <div class="flex items-center gap-2.5 flex-wrap">
+                                        <div class="flex gap-1 text-spider-red">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 font-bold tracking-wider uppercase flex items-center gap-1">
+                                            <i class="fas fa-microphone-lines text-[10px]"></i> Locução & Dublagem
+                                        </span>
+                                    </div>
+                                    <i class="fas fa-quote-right text-2xl text-indigo-500/20"></i>
                                 </div>
-                                <span class="text-xs px-3 py-1 rounded-full bg-spider-red/10 border border-spider-red/30 text-spider-red font-bold tracking-wider uppercase flex items-center gap-1.5">
-                                    <i class="fas fa-gamepad text-xs"></i> Comunidade & Live
+                                <blockquote class="text-gray-200 text-sm sm:text-base font-medium leading-relaxed italic mb-6">
+                                    "Conheci o Rian enquanto jogava VALORANT. Durante a partida ele fez uma narração em um dos rounds e achei incrível o trabalho dele com sua voz! Fechamos um contrato para alguns trabalhos de locução e dublagem; a qualidade de voz, dicção e interpretação da ideia é simplesmente perfeita. Superou todas as expectativas e com certeza é meu contato número 1 para futuros projetos."
+                                </blockquote>
+                            </div>
+                            <div class="pt-5 border-t border-white/10 flex items-center justify-between flex-wrap gap-2">
+                                <div>
+                                    <h4 class="font-heading font-black text-white text-base">Rz</h4>
+                                    <p class="text-xs text-gray-400 font-medium">CEO da <span class="text-indigo-400 font-bold">🦉 Midnight</span> • FiveM Content</p>
+                                </div>
+                                <span class="inline-flex items-center gap-1 text-[11px] text-gray-400 bg-white/5 px-3 py-1 rounded-full border border-white/5">
+                                    <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
                                 </span>
                             </div>
-
-                            <i class="fas fa-quote-right text-3xl text-spider-blue/20"></i>
                         </div>
 
-                        <!-- Texto do Feedback -->
-                        <blockquote class="text-gray-200 text-base font-medium leading-relaxed italic mb-8">
-                            "Excelente narrador! Acompanho com frequência as lives narrando partidas de VALORANT e outros jogos competitivos. O dinamismo, a leitura rápida das jogadas e o hype que ele coloca em cada lance transformam completamente a experiência de quem está assistindo. Trabalho de altíssimo nível!"
-                        </blockquote>
-                    </div>
-
-                    <!-- Autor do Feedback -->
-                    <div class="pt-6 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
-                        <div>
-                            <h4 class="font-heading font-black text-white text-base md:text-lg">
-                                Marcos
-                            </h4>
-                            <p class="text-xs sm:text-sm text-gray-400 font-medium mt-0.5">
-                                <a href="https://marksvb.dev" target="_blank" rel="noopener noreferrer" class="text-spider-red hover:underline font-semibold inline-flex items-center gap-1">
-                                    marksvb.dev <i class="fas fa-external-link-alt text-[10px]"></i>
-                                </a>
-                            </p>
-                        </div>
-
-                        <span class="inline-flex items-center gap-1.5 text-xs text-gray-400 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
-                            <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Feedback 5: Rz (CEO da Midnight • FiveM Content) -->
-                <div class="relative bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_40px_rgba(21,101,192,0.15)] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(21,101,192,0.25)] md:col-span-2 lg:col-span-2">
-                    <div>
-                        <!-- Aspas e Topo -->
-                        <div class="flex items-center justify-between mb-6">
-                            <!-- Estrelas e Tag -->
-                            <div class="flex items-center gap-3 flex-wrap">
-                                <div class="flex gap-1 text-spider-red">
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
-                                    <i class="fas fa-star text-sm"></i>
+                        <!-- Feedback 5: Marcos (marksvb.dev) -->
+                        <div class="w-[340px] sm:w-[400px] bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_35px_rgba(21,101,192,0.12)] flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <div class="flex items-center gap-2.5 flex-wrap">
+                                        <div class="flex gap-1 text-spider-red">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-spider-red/10 border border-spider-red/30 text-spider-red font-bold tracking-wider uppercase flex items-center gap-1">
+                                            <i class="fas fa-gamepad text-[10px]"></i> Comunidade & Live
+                                        </span>
+                                    </div>
+                                    <i class="fas fa-quote-right text-2xl text-spider-blue/20"></i>
                                 </div>
-                                <span class="text-xs px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 font-bold tracking-wider uppercase flex items-center gap-1.5">
-                                    <i class="fas fa-microphone-lines text-xs"></i> Locução & Dublagem
+                                <blockquote class="text-gray-200 text-sm sm:text-base font-medium leading-relaxed italic mb-6">
+                                    "Excelente narrador! Acompanho com frequência as lives narrando partidas de VALORANT e outros jogos competitivos. O dinamismo, a leitura rápida das jogadas e o hype que ele coloca em cada lance transformam completamente a experiência de quem está assistindo. Trabalho de altíssimo nível!"
+                                </blockquote>
+                            </div>
+                            <div class="pt-5 border-t border-white/10 flex items-center justify-between flex-wrap gap-2">
+                                <div>
+                                    <h4 class="font-heading font-black text-white text-base">Marcos</h4>
+                                    <p class="text-xs text-gray-400 font-medium">
+                                        <a href="https://marksvb.dev" target="_blank" rel="noopener noreferrer" class="text-spider-red hover:underline font-semibold inline-flex items-center gap-1">
+                                            marksvb.dev <i class="fas fa-external-link-alt text-[10px]"></i>
+                                        </a>
+                                    </p>
+                                </div>
+                                <span class="inline-flex items-center gap-1 text-[11px] text-gray-400 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                                    <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
                                 </span>
                             </div>
-
-                            <i class="fas fa-quote-right text-3xl text-indigo-500/20"></i>
                         </div>
 
-                        <!-- Texto do Feedback -->
-                        <blockquote class="text-gray-200 text-base font-medium leading-relaxed italic mb-8">
-                            "Conheci o Rian enquanto jogava VALORANT. Durante a partida ele fez uma narração em um dos rounds e achei incrível o trabalho dele com sua voz! Fechamos um contrato para alguns trabalhos de locução e dublagem; a qualidade de voz, dicção e interpretação da ideia é simplesmente perfeita. Superou todas as expectativas e com certeza é meu contato número 1 para futuros projetos."
-                        </blockquote>
                     </div>
 
-                    <!-- Autor do Feedback -->
-                    <div class="pt-6 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
-                        <div>
-                            <h4 class="font-heading font-black text-white text-base md:text-lg">
-                                Rz
-                            </h4>
-                            <p class="text-xs sm:text-sm text-gray-400 font-medium mt-0.5">
-                                CEO da <span class="text-indigo-400 font-bold">🦉 Midnight</span> • FiveM Content
-                            </p>
+                    <!-- Bloco Duplicado (Seamless Loop Infinito sem cortes) -->
+                    <div class="flex gap-6 pr-6 items-stretch" aria-hidden="true">
+                        
+                        <!-- Feedback 1: CNB Esports -->
+                        <div class="w-[340px] sm:w-[400px] bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_35px_rgba(229,57,53,0.12)] flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <div class="flex items-center gap-2.5 flex-wrap">
+                                        <div class="flex gap-1 text-spider-red">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-spider-blue/10 border border-spider-blue/30 text-spider-blue font-bold tracking-wider uppercase flex items-center gap-1">
+                                            <i class="fas fa-shield-halved text-[10px]"></i> CNB Esports
+                                        </span>
+                                    </div>
+                                    <i class="fas fa-quote-right text-2xl text-spider-red/20"></i>
+                                </div>
+                                <blockquote class="text-gray-200 text-sm sm:text-base font-medium leading-relaxed italic mb-6">
+                                    "A narração do Rian é diferenciada demais! Tem muita energia, emoção e consegue deixar cada round ainda mais insano. Dá gosto de acompanhar uma partida narrada por ele. Parabéns pelo trabalho e continue nessa pegada! 💥🙌"
+                                </blockquote>
+                            </div>
+                            <div class="pt-5 border-t border-white/10 flex items-center justify-between flex-wrap gap-2">
+                                <div>
+                                    <h4 class="font-heading font-black text-white text-base">Comercial CNB</h4>
+                                    <p class="text-xs text-gray-400 font-medium">Setor Comercial • <span class="text-spider-blue font-bold">CNB Esports</span></p>
+                                </div>
+                                <span class="inline-flex items-center gap-1 text-[11px] text-gray-400 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                                    <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
+                                </span>
+                            </div>
                         </div>
 
-                        <span class="inline-flex items-center gap-1.5 text-xs text-gray-400 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
-                            <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
-                        </span>
+                        <!-- Feedback 2: Rute (Cidade Bella) -->
+                        <div class="w-[340px] sm:w-[400px] bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_35px_rgba(229,57,53,0.15)] flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <div class="flex items-center gap-2.5 flex-wrap">
+                                        <div class="flex gap-1 text-spider-red">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold tracking-wider uppercase flex items-center gap-1">
+                                            <i class="fas fa-crown text-[10px]"></i> Cidade Bella
+                                        </span>
+                                    </div>
+                                    <i class="fas fa-quote-right text-2xl text-amber-500/20"></i>
+                                </div>
+                                <blockquote class="text-gray-200 text-sm sm:text-base font-medium leading-relaxed italic mb-6">
+                                    "O Rian é extremamente dedicado e manda muito bem no que faz! 🎙️🔥 Foi incrível contar com ele nos Fac x Fac e BellaCup da Cidade Bella. Cada participação dele fez a diferença e deixou os eventos ainda mais marcantes! Um talento que com certeza queremos ver em muitos outros eventos da Cidade Bella! 💛"
+                                </blockquote>
+                            </div>
+                            <div class="pt-5 border-t border-white/10 flex items-center justify-between flex-wrap gap-2">
+                                <div>
+                                    <h4 class="font-heading font-black text-white text-base">Rute</h4>
+                                    <p class="text-xs text-gray-400 font-medium">CEO • <span class="text-amber-400 font-bold">Cidade Bella</span></p>
+                                </div>
+                                <span class="inline-flex items-center gap-1 text-[11px] text-gray-400 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                                    <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Feedback 3: Nanda (Streamer) -->
+                        <div class="w-[340px] sm:w-[400px] bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_35px_rgba(145,70,255,0.15)] flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <div class="flex items-center gap-2.5 flex-wrap">
+                                        <div class="flex gap-1 text-spider-red">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-[#9146FF]/10 border border-[#9146FF]/30 text-[#9146FF] font-bold tracking-wider uppercase flex items-center gap-1">
+                                            <i class="fab fa-twitch text-[10px]"></i> Torneio & Live
+                                        </span>
+                                    </div>
+                                    <i class="fas fa-quote-right text-2xl text-[#9146FF]/20"></i>
+                                </div>
+                                <blockquote class="text-gray-200 text-sm sm:text-base font-medium leading-relaxed italic mb-6">
+                                    "O Rian é um ótimo narrador! Muito profissional, simpático e super divertido de trabalhar. Organizei um campeonato de VALORANT e ele foi nosso narrador, entregando um trabalho incrível. Todos adoraram a narração! Recomendo MUITO, não irão se arrepender."
+                                </blockquote>
+                            </div>
+                            <div class="pt-5 border-t border-white/10 flex items-center justify-between flex-wrap gap-2">
+                                <div>
+                                    <h4 class="font-heading font-black text-white text-base">Nanda</h4>
+                                    <p class="text-xs text-gray-400 font-medium"><span class="text-[#9146FF] font-bold">Streamer</span> na Twitch</p>
+                                </div>
+                                <span class="inline-flex items-center gap-1 text-[11px] text-gray-400 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                                    <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Feedback 4: Rz (Midnight) -->
+                        <div class="w-[340px] sm:w-[400px] bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_35px_rgba(21,101,192,0.15)] flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <div class="flex items-center gap-2.5 flex-wrap">
+                                        <div class="flex gap-1 text-spider-red">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 font-bold tracking-wider uppercase flex items-center gap-1">
+                                            <i class="fas fa-microphone-lines text-[10px]"></i> Locução & Dublagem
+                                        </span>
+                                    </div>
+                                    <i class="fas fa-quote-right text-2xl text-indigo-500/20"></i>
+                                </div>
+                                <blockquote class="text-gray-200 text-sm sm:text-base font-medium leading-relaxed italic mb-6">
+                                    "Conheci o Rian enquanto jogava VALORANT. Durante a partida ele fez uma narração em um dos rounds e achei incrível o trabalho dele com sua voz! Fechamos um contrato para alguns trabalhos de locução e dublagem; a qualidade de voz, dicção e interpretação da ideia é simplesmente perfeita. Superou todas as expectativas e com certeza é meu contato número 1 para futuros projetos."
+                                </blockquote>
+                            </div>
+                            <div class="pt-5 border-t border-white/10 flex items-center justify-between flex-wrap gap-2">
+                                <div>
+                                    <h4 class="font-heading font-black text-white text-base">Rz</h4>
+                                    <p class="text-xs text-gray-400 font-medium">CEO da <span class="text-indigo-400 font-bold">🦉 Midnight</span> • FiveM Content</p>
+                                </div>
+                                <span class="inline-flex items-center gap-1 text-[11px] text-gray-400 bg-white/5 px-3 py-1 rounded-full border border-white/5">
+                                    <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Feedback 5: Marcos (marksvb.dev) -->
+                        <div class="w-[340px] sm:w-[400px] bg-spider-black rounded-3xl p-8 border-gradient shadow-[0_0_35px_rgba(21,101,192,0.12)] flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <div class="flex items-center gap-2.5 flex-wrap">
+                                        <div class="flex gap-1 text-spider-red">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-spider-red/10 border border-spider-red/30 text-spider-red font-bold tracking-wider uppercase flex items-center gap-1">
+                                            <i class="fas fa-gamepad text-[10px]"></i> Comunidade & Live
+                                        </span>
+                                    </div>
+                                    <i class="fas fa-quote-right text-2xl text-spider-blue/20"></i>
+                                </div>
+                                <blockquote class="text-gray-200 text-sm sm:text-base font-medium leading-relaxed italic mb-6">
+                                    "Excelente narrador! Acompanho com frequência as lives narrando partidas de VALORANT e outros jogos competitivos. O dinamismo, a leitura rápida das jogadas e o hype que ele coloca em cada lance transformam completamente a experiência de quem está assistindo. Trabalho de altíssimo nível!"
+                                </blockquote>
+                            </div>
+                            <div class="pt-5 border-t border-white/10 flex items-center justify-between flex-wrap gap-2">
+                                <div>
+                                    <h4 class="font-heading font-black text-white text-base">Marcos</h4>
+                                    <p class="text-xs text-gray-400 font-medium">
+                                        <a href="https://marksvb.dev" target="_blank" rel="noopener noreferrer" class="text-spider-red hover:underline font-semibold inline-flex items-center gap-1">
+                                            marksvb.dev <i class="fas fa-external-link-alt text-[10px]"></i>
+                                        </a>
+                                    </p>
+                                </div>
+                                <span class="inline-flex items-center gap-1 text-[11px] text-gray-400 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                                    <i class="fas fa-circle-check text-emerald-400 text-xs"></i> Verificado
+                                </span>
+                            </div>
+                        </div>
+
                     </div>
+
                 </div>
-
             </div>
         </div>
     </section>

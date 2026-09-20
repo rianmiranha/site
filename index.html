@@ -573,29 +573,34 @@
                         </div>
                     </div>
 
-                    <!-- Formulário Rápido (Visual) -->
+                    <!-- Formulário Rápido -->
                     <div class="bg-spider-black rounded-2xl p-8 border border-white/5">
                         <h3 class="font-heading font-bold text-2xl mb-6 text-white">Envie uma proposta</h3>
-                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Em um site real, isso enviaria um e-mail para você!');">
+                        <form id="contact-form" action="https://formspree.io/f/xaenenbo" method="POST" class="space-y-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-400 mb-1">Nome / Organização</label>
-                                <input type="text" class="w-full bg-spider-darker border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-spider-red focus:ring-1 focus:ring-spider-red transition-colors" placeholder="Qual o nome do projeto?">
+                                <input type="text" name="name" required class="w-full bg-spider-darker border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-spider-red focus:ring-1 focus:ring-spider-red transition-colors" placeholder="Qual o nome do projeto?">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-1">Seu E-mail</label>
+                                <input type="email" name="email" required class="w-full bg-spider-darker border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-spider-red focus:ring-1 focus:ring-spider-red transition-colors" placeholder="seuemail@exemplo.com">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-400 mb-1">Tipo de Trabalho</label>
-                                <select class="w-full bg-spider-darker border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-spider-red focus:ring-1 focus:ring-spider-red transition-colors appearance-none">
-                                    <option>Narração de Torneio</option>
-                                    <option>Apresentação / Host</option>
-                                    <option>Proposta para ORG (F/A)</option>
-                                    <option>Parceria / Publi</option>
+                                <select name="tipo_trabalho" class="w-full bg-spider-darker border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-spider-red focus:ring-1 focus:ring-spider-red transition-colors appearance-none">
+                                    <option value="Narração de Torneio">Narração de Torneio</option>
+                                    <option value="Apresentação / Host">Apresentação / Host</option>
+                                    <option value="Proposta para ORG (F/A)">Proposta para ORG (F/A)</option>
+                                    <option value="Parceria / Publi">Parceria / Publi</option>
                                 </select>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-400 mb-1">Mensagem</label>
-                                <textarea rows="4" class="w-full bg-spider-darker border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-spider-red focus:ring-1 focus:ring-spider-red transition-colors" placeholder="Detalhes do projeto, datas, etc..."></textarea>
+                                <textarea name="message" required rows="4" class="w-full bg-spider-darker border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-spider-red focus:ring-1 focus:ring-spider-red transition-colors" placeholder="Detalhes do projeto, datas, etc..."></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-spider-red hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition-colors">
-                                Enviar Mensagem
+                            <div id="form-status" class="hidden text-sm text-center py-3 px-4 rounded-lg font-medium"></div>
+                            <button id="form-submit-btn" type="submit" class="w-full bg-spider-red hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center">
+                                <span>Enviar Mensagem</span>
                             </button>
                         </form>
                     </div>
@@ -713,6 +718,52 @@
                 timelineProgress.style.height = `${progress * 100}%`;
             }
         });
+
+        // Envio do Formulário de Contato (Formspree AJAX)
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const submitBtn = document.getElementById('form-submit-btn');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btnText = submitBtn.querySelector('span');
+                const originalText = btnText.innerText;
+                
+                // Feedback visual de envio
+                submitBtn.disabled = true;
+                btnText.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+                formStatus.className = 'hidden';
+
+                try {
+                    const formData = new FormData(contactForm);
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        formStatus.textContent = 'Mensagem enviada com sucesso! Entrarei em contato em breve.';
+                        formStatus.className = 'block text-sm text-center py-3 px-4 rounded-lg font-medium text-green-400 bg-green-500/10 border border-green-500/30';
+                        contactForm.reset();
+                    } else {
+                        const data = await response.json().catch(() => ({}));
+                        const errorMsg = (data.errors && data.errors.map(err => err.message).join(', ')) || 'Ocorreu um erro ao enviar. Tente novamente.';
+                        formStatus.textContent = errorMsg;
+                        formStatus.className = 'block text-sm text-center py-3 px-4 rounded-lg font-medium text-red-400 bg-red-500/10 border border-red-500/30';
+                    }
+                } catch (error) {
+                    formStatus.textContent = 'Falha de conexão ao enviar mensagem. Tente novamente.';
+                    formStatus.className = 'block text-sm text-center py-3 px-4 rounded-lg font-medium text-red-400 bg-red-500/10 border border-red-500/30';
+                } finally {
+                    submitBtn.disabled = false;
+                    btnText.innerText = originalText;
+                }
+            });
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ================= SEO BÁSICO ================= -->
+    <title>RianMiranha | Narrador de E-sports & Criador de Conteúdo</title>
+    <meta name="title" content="RianMiranha | Narrador de E-sports & Criador de Conteúdo">
+    <meta name="description" content="RianMiranha — Narrador de E-sports especializado em VALORANT, FiveM, CS, Sim Racing e muito mais. Transformando partidas em emoção!">
+    <meta name="keywords" content="RianMiranha, Narrador E-sports, Caster E-sports, Shoutcaster, VALORANT Brasil, FiveM PvP, CS Brasil, Simracing Brasil, Narrador de Games, Criador de Conteúdo E-sports, Cidade Bella, Phill TV, BSM">
+    <meta name="author" content="Rian Miranha">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rianmiranha.com.br/">
+
+    <!-- ================= FAVICON ================= -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <meta name="theme-color" content="#E53935">
+
+    <!-- ================= OPEN GRAPH / SOCIAL (WhatsApp, Discord, Facebook) ================= -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rianmiranha.com.br/">
+    <meta property="og:title" content="RianMiranha | Narrador de E-sports & Criador de Conteúdo">
+    <meta property="og:description" content="RianMiranha — Narrador de E-sports especializado em VALORANT, FiveM, CS, Sim Racing e muito mais. Transformando partidas em emoção!">
+    <meta property="og:image" content="https://i.imgur.com/ZdMGaqM.jpg">
+    <meta property="og:image:secure_url" content="https://i.imgur.com/ZdMGaqM.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Rian Miranha narrando campeonatos de E-sports">
+    <meta property="og:site_name" content="RianMiranha">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- ================= TWITTER / X CARDS ================= -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://rianmiranha.com.br/">
+    <meta name="twitter:site" content="@RianMiranha">
+    <meta name="twitter:creator" content="@RianMiranha">
+    <meta name="twitter:title" content="RianMiranha | Narrador de E-sports & Criador de Conteúdo">
+    <meta name="twitter:description" content="RianMiranha — Narrador de E-sports especializado em VALORANT, FiveM, CS, Sim Racing e muito mais. Transformando partidas em emoção!">
+    <meta name="twitter:image" content="https://i.imgur.com/ZdMGaqM.jpg">
+
+    <!-- ================= DADOS ESTRUTURADOS (SCHEMA.ORG / JSON-LD) ================= -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Rian Miranha",
+      "alternateName": "RianMiranha",
+      "url": "https://rianmiranha.com.br/",
+      "image": "https://i.imgur.com/ZdMGaqM.jpg",
+      "jobTitle": "Narrador de E-sports & Criador de Conteúdo",
+      "description": "Narrador profissional de E-sports especializado em VALORANT, FiveM, CS e Simracing.",
+      "sameAs": [
+        "https://www.twitch.tv/rianmiranha",
+        "https://www.tiktok.com/@rianmiranha",
+        "https://www.instagram.com/rian.miranha/",
+        "https://www.youtube.com/@rianmiranha",
+        "https://x.com/RianMiranha",
+        "https://discord.gg/j8KNgNsF"
+      ],
+      "knowsAbout": [
+        "E-sports",
+        "Shoutcasting",
+        "VALORANT",
+        "FiveM",
+        "Counter-Strike",
+        "Simracing",
+        "Transmissões ao vivo"
+      ]
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        spider: {
+                            red: '#E53935',
+                            blue: '#1565C0',
+                            black: '#111111',
+                            darker: '#0a0a0a'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 4s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #111111;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Efeito de teia sutil no fundo do Hero */
+        .bg-web {
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(229, 57, 53, 0.15) 0%, rgba(17, 17, 17, 1) 70%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0v60M0 30h60M9 9l42 42M51 9L9 51M30 15l15 15-15 15-15-15z' stroke='rgba(255,255,255,0.02)' stroke-width='1' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+            background-color: #111111;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #E53935, #1565C0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .border-gradient {
+            border: 2px solid transparent;
+            background-image: linear-gradient(#111111, #111111), linear-gradient(to right, #E53935, #1565C0);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+
+        /* Classes para animação de scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Efeito Hover em Cards */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(229, 57, 53, 0.3);
+        }
+
+        /* Animações do Preloader */
+        #preloader {
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+        }
+        #preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        @keyframes spiderSwing {
+            0%, 100% { transform: translateY(-8px) rotate(-3deg); }
+            50% { transform: translateY(10px) rotate(3deg); }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.25); opacity: 0.7; }
+        }
+        @keyframes webDrop {
+            0% { transform: scaleY(0); }
+            100% { transform: scaleY(1); }
+        }
+        .spider-anim {
+            animation: spiderSwing 2.4s ease-in-out infinite;
+        }
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-body antialiased selection:bg-spider-red selection:text-white">
+
+    <!-- Tela de Carregamento (Spider Preloader) -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-spider-darker flex flex-col items-center justify-center overflow-hidden">
+        <!-- Fundo sutil com brilho vermelho/azul da paleta -->
+        <div class="absolute w-96 h-96 bg-spider-red/20 rounded-full blur-[120px] pulse-glow pointer-events-none"></div>
+        <div class="absolute w-72 h-72 bg-spider-blue/20 rounded-full blur-[100px] pulse-glow pointer-events-none" style="animation-delay: 1s;"></div>
+        
+        <!-- Fio de Teia Descendo -->
+        <div class="w-[2px] h-24 bg-gradient-to-b from-transparent via-gray-500/40 to-spider-red/80 origin-top animate-[webDrop_0.8s_ease-out]"></div>
+
+        <!-- Conteúdo Central: Apenas a Aranha Suspensa -->
+        <div class="relative flex flex-col items-center spider-anim -mt-1">
+            <!-- Aranha / Ícone com Efeito Glow -->
+            <div class="relative flex items-center justify-center">
+                <!-- Aura de Pulso Hexagonal / Red & Blue -->
+                <div class="absolute -inset-4 bg-gradient-to-r from-spider-red via-red-600 to-spider-blue rounded-full opacity-50 blur-lg animate-pulse"></div>
+                
+                <div class="w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-spider-black border border-white/10 p-4 shadow-[0_0_40px_rgba(229,57,53,0.6)] flex items-center justify-center relative z-10">
+                    <img src="favicon.svg" alt="Carregando..." class="w-full h-full object-contain filter drop-shadow-[0_0_10px_rgba(229,57,53,0.9)]">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="absolute inset-0 bg-spider-black/90 backdrop-blur-sm border-b border-white/5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="logo.jpg" onerror="this.onerror=null; this.src='https://i.imgur.com/VmFEhn8.jpg';" alt="RianMiranha Logo" class="w-10 h-10 rounded-full border-2 border-spider-red object-cover">
+                    <a href="#" class="font-heading font-black text-2xl tracking-tighter">
+                        RIAN<span class="text-spider-red">MIRANHA</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#sobre" class="hover:text-spider-red transition-colors font-medium">Sobre Mim</a>
+                        <a href="#experiencia" class="hover:text-spider-red transition-colors font-medium">Experiência</a>
+                        <a href="#numeros" class="hover:text-spider-red transition-colors font-medium">Números</a>
+                        <a href="#contato" class="bg-spider-red hover:bg-red-700 text-white px-5 py-2.5 rounded-full font-bold transition-all transform hover:scale-105">Contratar</a>
+                    </div>
+                </div>
+                <!-- Menu Mobile Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-spider-darker absolute w-full border-b border-white/10">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#sobre" class="block px-3 py-2 text-base font-medium hover:bg-white/5 rounded-md">Sobre Mim</a>
+                <a href="#experiencia" class="block px-3 py-2 text-base font-medium hover:bg-white/5 rounded-md">Experiência</a>
+                <a href="#numeros" class="block px-3 py-2 text-base font-medium hover:bg-white/5 rounded-md">Números</a>
+                <a href="#contato" class="block px-3 py-2 text-spider-red font-bold hover:bg-white/5 rounded-md">Contratar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-web">
+        <!-- Elementos decorativos (linhas/luzes) -->
+        <div class="absolute top-1/4 left-10 w-32 h-32 bg-spider-red/20 rounded-full blur-[80px] animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-10 w-48 h-48 bg-spider-blue/20 rounded-full blur-[100px] animate-pulse-slow"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-spider-blue/10 border border-spider-blue/30 text-spider-blue font-bold text-sm tracking-wider mb-6 animate-[fadeInUp_1s_ease-out]">
+                F/A • BUSCANDO ORG
+            </span>
+            
+            <h1 class="font-heading font-black text-5xl md:text-7xl lg:text-8xl tracking-tight mb-4 animate-[fadeInUp_1s_ease-out_0.2s_both]">
+                <span class="block text-white uppercase">RianMiranha</span>
+                <span class="block text-gradient">Narrador de E-sports</span>
+            </h1>
+            
+            <p class="mt-6 max-w-2xl mx-auto text-xl md:text-2xl text-gray-400 font-medium animate-[fadeInUp_1s_ease-out_0.4s_both]">
+                A voz que você procura para o seu campeonato ou evento! Transformando momentos em histórias. Trazendo emoção e muito hype para o cenário competitivo desde 2023.
+            </p>
+            
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 animate-[fadeInUp_1s_ease-out_0.6s_both]">
+                <a href="#contato" class="bg-spider-red hover:bg-red-600 text-white font-bold py-4 px-8 rounded-full transition-all hover:shadow-[0_0_20px_rgba(229,57,53,0.4)] transform hover:-translate-y-1">
+                    <i class="fas fa-microphone-lines mr-2"></i> Leve minha voz pro seu evento
+                </a>
+                <a href="#sobre" class="bg-transparent border border-gray-600 hover:border-white text-white font-bold py-4 px-8 rounded-full transition-all hover:bg-white/5">
+                    Conheça minha trajetória
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#sobre" class="text-gray-500 hover:text-white transition-colors">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sobre Mim -->
+    <section id="sobre" class="py-24 bg-spider-darker">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Foto / Avatar Mockup -->
+                <div class="relative reveal flex justify-center">
+                    <div class="w-72 h-72 md:w-96 md:h-96 rounded-2xl bg-spider-black border-gradient flex items-center justify-center overflow-hidden animate-float relative z-10">
+                        <img src="rian-narrando.jpg" onerror="this.onerror=null; this.src='https://i.imgur.com/ZdMGaqM.jpg';" alt="RianMiranha Narrando" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Elementos gráficos de fundo -->
+                    <div class="absolute -inset-4 bg-gradient-to-r from-spider-red to-spider-blue opacity-20 blur-2xl -z-10 rounded-full"></div>
+                </div>
+
+                <!-- Textos Biografia -->
+                <div class="reveal">
+                    <h2 class="font-heading font-black text-4xl md:text-5xl mb-6 uppercase text-spider-red">Biografia</h2>
+                    <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
+                        <p>Salve! Tudo bem? Me chamo Rian, tenho 24 anos e sou de São José/SC. Desde criança sempre fui um garoto apaixonado por games e filmes, e hoje estar trabalhando com isso é muito gratificante.</p>
+                        <p>Minha história nas lives começou em 2020, logo no beta do VALORANT. Comecei a criar conteúdo e isso me engajou na Twitch, onde alcancei um público fiel de mais de 2,7 mil pessoas oferecendo sempre uma experiência diversa e confortável.</p>
+                        <p>Foi no final de 2023 que a chavinha virou: percebi que tinha talento para narrar jogos de E-Sports. Comecei narrando campeonatos oficiais da comunidade da Riot Games e logo o shoutcasting se tornou minha grande paixão e foco profissional.</p>
+                    </div>
+
+                    <!-- Highlight: O Recomeço -->
+                    <div class="mt-8 border-gradient p-6 rounded-xl bg-spider-black/50 relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-spider-red to-spider-blue"></div>
+                        <h3 class="font-heading font-bold text-xl text-white mb-2 flex items-center">
+                            <i class="fas fa-arrow-up-right-dots text-spider-blue mr-3"></i> O Valor do Recomeço
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Recentemente, tomei uma decisão ousada: <strong>criei um perfil novo no Instagram do zero.</strong> Meu perfil antigo abrigava vídeos que, somados, ultrapassavam a marca de <strong>1 milhão de visualizações</strong>. Não foi fácil abrir mão dessa base, mas decidi recomeçar para ter um objetivo claro, direto e focado 100% no meu profissionalismo como narrador e influenciador de E-sports. Qualidade e alinhamento importam mais do que apenas números inflamados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showreel / Prévia de Narração -->
+    <section id="showreel" class="py-24 bg-spider-black border-t border-white/5 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+            <h2 class="font-heading font-black text-4xl md:text-5xl uppercase mb-4">
+                Prévia de <span class="text-spider-red">Narração</span>
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Confira um pouco da emoção e energia que levo para as transmissões de E-sports.
+            </p>
+            </div>
+
+            <div class="reveal relative pt-[56.25%] w-full rounded-2xl overflow-hidden border-gradient shadow-[0_0_30px_rgba(229,57,53,0.2)]">
+            <iframe
+                class="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/fk1LH9XO7bE"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiência Profissional -->
+    <section id="experiencia" class="py-24 bg-spider-darker relative border-t border-white/5">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-heading font-black text-4xl md:text-5xl uppercase mb-4">Experiência <span class="text-spider-blue">Profissional</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">De campeonatos de comunidade às grandes transmissões. Um caminho trilhado com estudo, dedicação e muita voz.</p>
+            </div>
+
+            <!-- Linha do Tempo Animada e Centralizada -->
+            <div class="relative max-w-4xl mx-auto mt-16 pb-8" id="timeline-container">
+                <!-- Fundo da linha (trilho) -->
+                <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-white/10 transform -translate-x-1/2 rounded-full"></div>
+                <!-- Linha animada que cresce no scroll -->
+                <div id="timeline-progress" class="absolute left-6 md:left-1/2 top-0 w-1 bg-gradient-to-b from-spider-blue to-spider-red transform -translate-x-1/2 rounded-full transition-all duration-300 ease-out z-0" style="height: 0%;"></div>
+
+                <div class="space-y-16 relative z-10">
+                    
+                    <!-- Item 1: Projetos Atuais (Texto à Esquerda no Desktop) -->
+                    <div class="relative flex md:items-center items-start justify-between w-full reveal">
+                        <div class="w-full pl-14 md:pl-0 md:w-1/2 md:pr-12 text-left md:text-right">
+                            <h3 class="font-heading font-bold text-2xl text-white">Projetos Atuais</h3>
+                            <span class="text-spider-blue text-sm font-bold tracking-wider">PRESENTE</span>
+                            <p class="mt-3 text-gray-400">Narrador oficial dos campeonatos da <strong>Cidade Bella</strong> (transmissões de torneios FiveM PvP). No automobilismo virtual, sou a voz da <strong>Phill TV</strong> narrando disputas acirradas, e também narro na <strong>BSM</strong>, a maior comunidade de sim racing da América Latina.</p>
+                        </div>
+                        <div class="absolute left-6 md:left-1/2 w-5 h-5 rounded-full bg-spider-blue border-4 border-spider-black transform -translate-x-1/2 shadow-[0_0_10px_rgba(21,101,192,0.8)] top-1 md:top-auto"></div>
+                        <div class="hidden md:block w-1/2"></div>
+                    </div>
+
+                    <!-- Item 2: Axkrum (Texto à Direita no Desktop) -->
+                    <div class="relative flex md:items-center items-start justify-between w-full reveal">
+                        <div class="hidden md:block w-1/2"></div>
+                        <div class="absolute left-6 md:left-1/2 w-5 h-5 rounded-full bg-spider-red border-4 border-spider-black transform -translate-x-1/2 shadow-[0_0_10px_rgba(229,57,53,0.8)] top-1 md:top-auto"></div>
+                        <div class="w-full pl-14 md:pl-12 md:w-1/2 text-left">
+                            <h3 class="font-heading font-bold text-2xl text-white">Organização Axkrum</h3>
+                            <span class="text-spider-red text-sm font-bold tracking-wider">OUT - SET 2024</span>
+                            <p class="mt-3 text-gray-400">Um período de constante aprendizado e evolução, criando conteúdo e me dedicando ao máximo para transmitir emoções marcantes. Encerrei o ciclo em setembro para buscar novas oportunidades.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Mentora (Texto à Esquerda no Desktop) -->
+                    <div class="relative flex md:items-center items-start justify-between w-full reveal">
+                        <div class="w-full pl-14 md:pl-0 md:w-1/2 md:pr-12 text-left md:text-right">
+                            <h3 class="font-heading font-bold text-2xl text-white">Plataforma Mentora</h3>
+                            <span class="text-gray-400 text-sm font-bold tracking-wider">AGOSTO 2024</span>
+                            <p class="mt-3 text-gray-400">Narração da <strong>Copa Mentora</strong> e outros campeonatos promovidos pela plataforma, ampliando a experiência e rodagem no cenário competitivo.</p>
+                        </div>
+                        <div class="absolute left-6 md:left-1/2 w-5 h-5 rounded-full bg-gray-500 border-4 border-spider-black transform -translate-x-1/2 top-1 md:top-auto"></div>
+                        <div class="hidden md:block w-1/2"></div>
+                    </div>
+
+                    <!-- Item 4: Quackers (Texto à Direita no Desktop) -->
+                    <div class="relative flex md:items-center items-start justify-between w-full reveal">
+                        <div class="hidden md:block w-1/2"></div>
+                        <div class="absolute left-6 md:left-1/2 w-5 h-5 rounded-full bg-gray-500 border-4 border-spider-black transform -translate-x-1/2 top-1 md:top-auto"></div>
+                        <div class="w-full pl-14 md:pl-12 md:w-1/2 text-left">
+                            <h3 class="font-heading font-bold text-2xl text-white">Organização Quackers</h3>
+                            <span class="text-gray-400 text-sm font-bold tracking-wider">JUNHO 2024</span>
+                            <p class="mt-3 text-gray-400">Minha primeira organização profissional. Tive a honra de narrar campeonatos incríveis como o <strong>CampDelas</strong> e o <strong>Patorneio</strong>, trabalhando diretamente com jogadores(as) profissionais do cenário.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- Objetivo final -->
+            <div class="mt-16 text-center reveal">
+                <div class="inline-block p-[2px] rounded-2xl bg-gradient-to-r from-spider-red to-spider-blue">
+                    <div class="bg-spider-darker px-8 py-6 rounded-[14px]">
+                        <p class="text-xl md:text-2xl font-medium text-white italic">"Sigo dedicado a alcançar novos patamares, sempre com o sonho firme de, no futuro, me tornar <span class="font-bold text-spider-red">narrador oficial da Riot Games</span>."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics / Números -->
+    <section id="numeros" class="py-24 bg-spider-darker">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-heading font-black text-4xl md:text-5xl uppercase mb-4">Alcance & <span class="text-spider-red">Analytics</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Uma comunidade fiel construída com dedicação, constância e criação de conteúdo autêntico.</p>
+            </div>
+
+            <!-- Destaque Views -->
+            <div class="mb-12 max-w-3xl mx-auto reveal">
+                <div class="bg-gradient-to-r from-[#E53935]/15 via-spider-black to-spider-black border border-spider-red/30 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_4px_20px_rgba(229,57,53,0.1)]">
+                    <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
+                        <div class="bg-spider-red/20 p-4 rounded-xl flex items-center justify-center flex-shrink-0 border border-spider-red/30">
+                            <i class="fas fa-fire text-3xl text-spider-red"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-2xl text-white">+1.000.000 de Views</h4>
+                            <p class="text-gray-400 text-sm mt-1">Visualizações acumuladas em projetos anteriores de conteúdo curto.</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto">
+                        <span class="inline-flex items-center justify-center text-center bg-spider-red/90 hover:bg-spider-red text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider shadow-md border border-red-400/30">
+                            Comprovação de Potencial
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid Redes Sociais: Linha 1 (3 itens) + Linha 2 (2 itens centralizados) -->
+            <div class="space-y-6">
+                <!-- Linha 1: Twitch, TikTok, Instagram -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Twitch -->
+                    <a href="https://www.twitch.tv/rianmiranha"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visitar canal na Twitch"
+                        class="block bg-spider-black rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-transform duration-300 hover:scale-105 hover:border-[#9146FF]/40">
+                        <i class="fab fa-twitch text-5xl text-[#9146FF] mb-4"></i>
+                        <h3 class="font-heading font-black text-3xl text-white mb-1">+2.700</h3>
+                        <p class="text-gray-500 font-medium uppercase tracking-widest text-sm">Seguidores</p>
+                        <p class="text-gray-400 text-sm mt-4">Transmissões de campeonatos, gameplays variadas e interação direta.</p>
+                    </a>
+                    
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@rianmiranha"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visitar perfil no TikTok"
+                        class="block bg-spider-black rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-all duration-300 hover:scale-105 hover:border-[#69C9D0]/40"
+                        style="transition-delay: 100ms;">
+                        <i class="fab fa-tiktok text-5xl text-white mb-4"></i>
+                        <h3 class="font-heading font-black text-3xl text-white mb-1">+2.450</h3>
+                        <p class="text-gray-500 font-medium uppercase tracking-widest text-sm">Seguidores • 78.9k Curtidas</p>
+                        <p class="text-gray-400 text-sm mt-4">Clipes de narração, bastidores e conteúdo dinâmico.</p>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/rian.miranha/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visitar perfil no Instagram"
+                        class="block bg-spider-black rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-all duration-300 hover:scale-105 hover:border-[#E1306C]/40 sm:col-span-2 lg:col-span-1"
+                        style="transition-delay: 200ms;">
+                        <i class="fab fa-instagram text-5xl text-[#E1306C] mb-4"></i>
+                        <h3 class="font-heading font-black text-3xl text-white mb-1">+114</h3>
+                        <p class="text-gray-500 font-medium uppercase tracking-widest text-sm">Seguidores</p>
+                        <p class="text-gray-400 text-sm mt-4">Perfil focado 100% no lado profissional do narrador e E-sports.</p>
+                    </a>
+                </div>
+
+                <!-- Linha 2: YouTube & X (Lado a Lado Centralizados) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto gap-6">
+                    <!-- YouTube -->
+                    <a href="https://www.youtube.com/@rianmiranha"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visitar canal no YouTube"
+                        class="block bg-spider-black rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-all duration-300 hover:scale-105 hover:border-[#FF0000]/40"
+                        style="transition-delay: 300ms;">
+                        <i class="fab fa-youtube text-5xl text-[#FF0000] mb-4"></i>
+                        <h3 class="font-heading font-black text-3xl text-white mb-1">+670</h3>
+                        <p class="text-gray-500 font-medium uppercase tracking-widest text-sm">Inscritos</p>
+                        <p class="text-gray-400 text-sm mt-4">Retomando postagens com VODs, melhores momentos e análises.</p>
+                    </a>
+
+                    <!-- X / Twitter -->
+                    <a href="https://x.com/RianMiranha"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visitar perfil no X"
+                        class="block bg-spider-black rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-all duration-300 hover:scale-105 hover:border-white/40"
+                        style="transition-delay: 400ms;">
+                        <i class="fab fa-x-twitter text-5xl text-white mb-4"></i>
+                        <h3 class="font-heading font-black text-3xl text-white mb-1">+130</h3>
+                        <p class="text-gray-500 font-medium uppercase tracking-widest text-sm">Seguidores</p>
+                        <p class="text-gray-400 text-sm mt-4">Conexão diária com o cenário competitivo e updates rápidos.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços & Contato -->
+    <section id="contato" class="py-24 bg-spider-black bg-web relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-spider-darker rounded-3xl p-8 md:p-16 border-gradient shadow-2xl reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    
+                    <!-- Info Contato -->
+                    <div>
+                        <h2 class="font-heading font-black text-4xl mb-6">Vamos elevar o nível da sua transmissão?</h2>
+                        <p class="text-gray-400 text-lg mb-8">Disponível para freelas e buscando uma organização fixa para chamar de casa. Se o seu projeto precisa de uma voz com técnica, emoção e uma comunidade engajada, é só chamar.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-spider-red/20 p-3 rounded-lg text-spider-red mr-4">
+                                    <i class="fas fa-headset text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-lg">Narração & Caster</h4>
+                                    <p class="text-gray-500 text-sm">VALORANT, FiveM, Simracing e modalidades FPS.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-spider-blue/20 p-3 rounded-lg text-spider-blue mr-4">
+                                    <i class="fas fa-video text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-lg">Criação de Conteúdo</h4>
+                                    <p class="text-gray-500 text-sm">Ações para marcas, campanhas e divulgação em redes.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10 flex gap-4">
+                            <!-- Botão Discord -->
+                            <a href="https://discord.gg/j8KNgNsF" target="_blank" class="w-12 h-12 rounded-full bg-[#5865F2] flex items-center justify-center text-white hover:scale-110 transition-transform shadow-[0_0_15px_rgba(88,101,242,0.3)]">
+                                <i class="fab fa-discord text-xl"></i>
+                            </a>
+                            <a href="mailto:seuemail@exemplo.com" class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Formulário Rápido (Visual) -->
+                    <div class="bg-spider-black rounded-2xl p-8 border border-white/5">
+                        <h3 class="font-heading font-bold text-2xl mb-6 text-white">Envie uma proposta</h3>
+                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Em um site real, isso enviaria um e-mail para você!');">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-1">Nome / Organização</label>
+                                <input type="text" class="w-full bg-spider-darker border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-spider-red focus:ring-1 focus:ring-spider-red transition-colors" placeholder="Qual o nome do projeto?">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-1">Tipo de Trabalho</label>
+                                <select class="w-full bg-spider-darker border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-spider-red focus:ring-1 focus:ring-spider-red transition-colors appearance-none">
+                                    <option>Narração de Torneio</option>
+                                    <option>Apresentação / Host</option>
+                                    <option>Proposta para ORG (F/A)</option>
+                                    <option>Parceria / Publi</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-1">Mensagem</label>
+                                <textarea rows="4" class="w-full bg-spider-darker border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-spider-red focus:ring-1 focus:ring-spider-red transition-colors" placeholder="Detalhes do projeto, datas, etc..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-spider-red hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition-colors">
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-spider-darker py-8 border-t border-white/10 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="font-heading font-black text-xl tracking-tighter mb-4 text-white">
+                RIAN<span class="text-spider-red">MIRANHA</span>
+            </h2>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.twitch.tv/rianmiranha" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Twitch de Rian Miranha" 
+                    class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-twitch text-xl"></i></a>
+                <a href="https://www.instagram.com/rian.miranha/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram de Rian Miranha"
+                    class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="https://www.tiktok.com/@rianmiranha" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Tiktok de Rian Miranha"
+                    class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-tiktok text-xl"></i></a>
+                <a href="https://www.youtube.com/@rianmiranha" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Youtube de Rian Miranha"
+                    class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-youtube text-xl"></i></a>
+                <a href="https://x.com/RianMiranha" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X de Rian Miranha"
+                    class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-x-twitter text-xl"></i></a>
+            </div>
+            <p class="text-gray-600 text-sm">
+                &copy; 2026 RianMiranha. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Interação -->
+    <script>
+        // Fechar Preloader após o carregamento da página
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                setTimeout(() => {
+                    preloader.classList.add('loaded');
+                }, 400); // Pequeno delay para exibir a animação suavemente
+            }
+        });
+
+        // Menu Mobile Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Navbar Background on Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Scroll Animation Observer (Revelar elementos conforme rola)
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Animação da Linha do Tempo (Crescimento no Scroll)
+        const timelineContainer = document.getElementById('timeline-container');
+        const timelineProgress = document.getElementById('timeline-progress');
+        
+        window.addEventListener('scroll', () => {
+            if(timelineContainer && timelineProgress) {
+                const rect = timelineContainer.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // O cálculo faz a linha crescer quando o topo do container passa da metade da tela
+                let progress = (windowHeight / 2 - rect.top) / rect.height;
+                
+                // Limita o progresso entre 0 (0%) e 1 (100%)
+                if (progress < 0) progress = 0;
+                if (progress > 1) progress = 1;
+                
+                timelineProgress.style.height = `${progress * 100}%`;
+            }
+        });
+    </script>
+</body>
+</html>

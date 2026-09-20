@@ -7,7 +7,7 @@
     <title>RianMiranha | Narrador de E-sports & Criador de Conteúdo</title>
     <meta name="title" content="RianMiranha | Narrador de E-sports & Criador de Conteúdo">
     <meta name="description" content="RianMiranha — Narrador de E-sports especializado em VALORANT, FiveM, CS, Sim Racing e muito mais. Transformando partidas em emoção!">
-    <meta name="keywords" content="RianMiranha, Narrador E-sports, Caster E-sports, Shoutcaster, VALORANT Brasil, FiveM PvP, CS Brasil, Simracing Brasil, Narrador de Games, Criador de Conteúdo E-sports, Cidade Bella, Phill TV, BSM">
+    <meta name="keywords" content="RianMiranha, Narrador E-sports, Caster E-sports, Shoutcaster, VALORANT Brasil, FiveM PvP, CS Brasil, Simracing Brasil, Narrador de Games, Criador de Conteúdo E-sports, Cidade Bella, Phill TV, BSM, CNB">
     <meta name="author" content="Rian Miranha">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://rianmiranha.com.br/">
@@ -73,7 +73,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -118,6 +118,18 @@
             overflow-x: hidden;
         }
 
+        /* Animação de subida suave utilizada no Hero */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Efeito de teia sutil no fundo do Hero */
         .bg-web {
             background-image: 
@@ -152,7 +164,7 @@
 
         /* Efeito Hover em Cards */
         .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
         .card-hover:hover {
             transform: translateY(-5px);
@@ -185,6 +197,32 @@
         }
         .pulse-glow {
             animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        /* ================= CARROSSEL CONTÍNUO DE FEEDBACKS (MARQUEE) ================= */
+        @keyframes feedbackMarquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .feedback-marquee-track {
+            display: flex;
+            width: max-content;
+            animation: feedbackMarquee 36s linear infinite;
+        }
+
+        .feedback-marquee-container:hover .feedback-marquee-track {
+            animation-play-state: paused;
+        }
+
+        @media (max-width: 768px) {
+            .feedback-marquee-track {
+                animation-duration: 26s;
+            }
         }
     </style>
 </head>
@@ -229,12 +267,13 @@
                         <a href="#sobre" class="hover:text-spider-red transition-colors font-medium">Sobre Mim</a>
                         <a href="#experiencia" class="hover:text-spider-red transition-colors font-medium">Experiência</a>
                         <a href="#numeros" class="hover:text-spider-red transition-colors font-medium">Números</a>
+                        <a href="#feedbacks" class="hover:text-spider-red transition-colors font-medium">Feedbacks</a>
                         <a href="#contato" class="bg-spider-red hover:bg-red-700 text-white px-5 py-2.5 rounded-full font-bold transition-all transform hover:scale-105">Contratar</a>
                     </div>
                 </div>
                 <!-- Menu Mobile Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none" aria-label="Abrir menu de navegação">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -246,6 +285,7 @@
                 <a href="#sobre" class="block px-3 py-2 text-base font-medium hover:bg-white/5 rounded-md">Sobre Mim</a>
                 <a href="#experiencia" class="block px-3 py-2 text-base font-medium hover:bg-white/5 rounded-md">Experiência</a>
                 <a href="#numeros" class="block px-3 py-2 text-base font-medium hover:bg-white/5 rounded-md">Números</a>
+                <a href="#feedbacks" class="block px-3 py-2 text-base font-medium hover:bg-white/5 rounded-md">Feedbacks</a>
                 <a href="#contato" class="block px-3 py-2 text-spider-red font-bold hover:bg-white/5 rounded-md">Contratar</a>
             </div>
         </div>
@@ -283,7 +323,7 @@
         
         <!-- Scroll Down Indicator -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <a href="#sobre" class="text-gray-500 hover:text-white transition-colors">
+            <a href="#sobre" class="text-gray-500 hover:text-white transition-colors" aria-label="Rolar para a seção Sobre">
                 <i class="fas fa-chevron-down text-2xl"></i>
             </a>
         </div>
@@ -330,24 +370,24 @@
     <section id="showreel" class="py-24 bg-spider-black border-t border-white/5 relative">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal">
-            <h2 class="font-heading font-black text-4xl md:text-5xl uppercase mb-4">
-                Prévia de <span class="text-spider-red">Narração</span>
-            </h2>
-            <p class="text-gray-400 max-w-2xl mx-auto">
-                Confira um pouco da emoção e energia que levo para as transmissões de E-sports.
-            </p>
+                <h2 class="font-heading font-black text-4xl md:text-5xl uppercase mb-4">
+                    Prévia de <span class="text-spider-red">Narração</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Confira um pouco da emoção e energia que levo para as transmissões de E-sports.
+                </p>
             </div>
 
             <div class="reveal relative pt-[56.25%] w-full rounded-2xl overflow-hidden border-gradient shadow-[0_0_30px_rgba(229,57,53,0.2)]">
-            <iframe
-                class="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/fk1LH9XO7bE"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
+                <iframe
+                    class="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/fk1LH9XO7bE"
+                    title="YouTube video player - Demonstração de Narração RianMiranha"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </section>
@@ -428,7 +468,7 @@
     </section>
 
     <!-- Analytics / Números -->
-    <section id="numeros" class="py-24 bg-spider-darker">
+    <section id="numeros" class="py-24 bg-spider-black border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <h2 class="font-heading font-black text-4xl md:text-5xl uppercase mb-4">Alcance & <span class="text-spider-red">Analytics</span></h2>
@@ -463,8 +503,8 @@
                     <a href="https://www.twitch.tv/rianmiranha"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Visitar canal na Twitch"
-                        class="block bg-spider-black rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-transform duration-300 hover:scale-105 hover:border-[#9146FF]/40">
+                        aria-label="Visitar canal na Twitch de RianMiranha"
+                        class="block bg-spider-darker rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-transform duration-300 hover:scale-105 hover:border-[#9146FF]/40">
                         <i class="fab fa-twitch text-5xl text-[#9146FF] mb-4"></i>
                         <h3 class="font-heading font-black text-3xl text-white mb-1">+2.700</h3>
                         <p class="text-gray-500 font-medium uppercase tracking-widest text-sm">Seguidores</p>
@@ -475,8 +515,8 @@
                     <a href="https://www.tiktok.com/@rianmiranha"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Visitar perfil no TikTok"
-                        class="block bg-spider-black rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-all duration-300 hover:scale-105 hover:border-[#69C9D0]/40"
+                        aria-label="Visitar perfil no TikTok de RianMiranha"
+                        class="block bg-spider-darker rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-all duration-300 hover:scale-105 hover:border-[#69C9D0]/40"
                         style="transition-delay: 100ms;">
                         <i class="fab fa-tiktok text-5xl text-white mb-4"></i>
                         <h3 class="font-heading font-black text-3xl text-white mb-1">+2.450</h3>
@@ -488,8 +528,8 @@
                     <a href="https://www.instagram.com/rian.miranha/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Visitar perfil no Instagram"
-                        class="block bg-spider-black rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-all duration-300 hover:scale-105 hover:border-[#E1306C]/40 sm:col-span-2 lg:col-span-1"
+                        aria-label="Visitar perfil no Instagram de RianMiranha"
+                        class="block bg-spider-darker rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-all duration-300 hover:scale-105 hover:border-[#E1306C]/40 sm:col-span-2 lg:col-span-1"
                         style="transition-delay: 200ms;">
                         <i class="fab fa-instagram text-5xl text-[#E1306C] mb-4"></i>
                         <h3 class="font-heading font-black text-3xl text-white mb-1">+114</h3>
@@ -504,8 +544,8 @@
                     <a href="https://www.youtube.com/@rianmiranha"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Visitar canal no YouTube"
-                        class="block bg-spider-black rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-all duration-300 hover:scale-105 hover:border-[#FF0000]/40"
+                        aria-label="Visitar canal no YouTube de RianMiranha"
+                        class="block bg-spider-darker rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-all duration-300 hover:scale-105 hover:border-[#FF0000]/40"
                         style="transition-delay: 300ms;">
                         <i class="fab fa-youtube text-5xl text-[#FF0000] mb-4"></i>
                         <h3 class="font-heading font-black text-3xl text-white mb-1">+670</h3>
@@ -517,8 +557,8 @@
                     <a href="https://x.com/RianMiranha"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Visitar perfil no X"
-                        class="block bg-spider-black rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-all duration-300 hover:scale-105 hover:border-white/40"
+                        aria-label="Visitar perfil no X de RianMiranha"
+                        class="block bg-spider-darker rounded-xl p-8 border border-white/5 card-hover reveal text-center transition-all duration-300 hover:scale-105 hover:border-white/40"
                         style="transition-delay: 400ms;">
                         <i class="fab fa-x-twitter text-5xl text-white mb-4"></i>
                         <h3 class="font-heading font-black text-3xl text-white mb-1">+130</h3>
@@ -527,6 +567,286 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ================= SEÇÃO DE FEEDBACKS EM LOOPING CONTÍNUO ================= -->
+    <section id="feedbacks" class="py-24 bg-spider-darker relative border-t border-white/5 overflow-hidden">
+        <!-- Glows decorativos de fundo -->
+        <div class="absolute top-1/2 left-0 w-80 h-80 bg-spider-red/10 rounded-full blur-[130px] pointer-events-none transform -translate-y-1/2"></div>
+        <div class="absolute top-1/2 right-0 w-80 h-80 bg-spider-blue/10 rounded-full blur-[130px] pointer-events-none transform -translate-y-1/2"></div>
+
+        <!-- Cabeçalho da Seção -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center reveal">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-spider-red/10 border border-spider-red/30 text-spider-red font-bold text-xs uppercase tracking-widest mb-4">
+                <i class="fas fa-certificate mr-1.5 text-spider-red"></i> Prova Social & Confiança
+            </span>
+            <h2 class="font-heading font-black text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-white mb-4">
+                Eles Confiaram <span class="text-gradient">Na Minha Voz</span>
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto text-base md:text-lg">
+                Veja o relato de quem confiou seus torneios, organizações e projetos ao meu microfone. Emoção, técnica e energia que marcam transmissões.
+            </p>
+        </div>
+
+        <!-- Carrossel Marquee Infinito -->
+        <div class="relative w-full overflow-hidden feedback-marquee-container py-4">
+            <!-- Fades laterais para efeito elegante de transição suave -->
+            <div class="absolute left-0 top-0 bottom-0 w-16 md:w-36 bg-gradient-to-r from-spider-darker via-spider-darker/90 to-transparent z-20 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 md:w-36 bg-gradient-to-l from-spider-darker via-spider-darker/90 to-transparent z-20 pointer-events-none"></div>
+
+            <div class="feedback-marquee-track flex gap-6">
+                <!-- ================= CARD 1: CNB ESPORTS (COMERCIAL CNB) ================= -->
+                <div class="w-[320px] sm:w-[380px] md:w-[420px] flex-shrink-0 bg-spider-black rounded-2xl p-7 border border-white/10 flex flex-col justify-between transition-all duration-300 hover:border-spider-blue/60 hover:shadow-[0_0_30px_rgba(21,101,192,0.25)] hover:-translate-y-1.5 group">
+                    <div>
+                        <!-- Avaliação (Estrelas) e Categoria -->
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex gap-1 text-spider-red">
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-spider-blue/10 border border-spider-blue/20 text-spider-blue font-semibold flex items-center gap-1.5">
+                                <i class="fas fa-shield-halved text-[10px]"></i> CNB Esports
+                            </span>
+                        </div>
+                        <!-- Mensagem do Feedback -->
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed italic relative">
+                            <i class="fas fa-quote-left text-spider-blue/20 text-xl absolute -top-2 -left-2"></i>
+                            <span class="relative z-10 pl-4 block">
+                                "A narração do Rian é diferenciada demais! Tem muita energia, emoção e consegue deixar cada round ainda mais insano. Dá gosto de acompanhar uma partida narrada por ele. Parabéns pelo trabalho e continue nessa pegada! 💥🙌"
+                            </span>
+                        </p>
+                    </div>
+                    <!-- Foto e Dados do Cliente -->
+                    <div class="mt-6 pt-5 border-t border-white/5 flex items-center gap-4">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=150&auto=format&fit=crop&q=80" alt="Comercial CNB" class="w-12 h-12 rounded-full object-cover border-2 border-spider-blue shadow-[0_0_12px_rgba(21,101,192,0.4)]">
+                            <div class="absolute -bottom-1 -right-1 bg-spider-blue text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px]">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-white text-base group-hover:text-spider-blue transition-colors">
+                                Comercial CNB
+                            </h4>
+                            <p class="text-xs text-gray-400 font-medium">
+                                Setor Comercial • <span class="text-spider-blue font-bold">CNB Esports</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="w-[320px] sm:w-[380px] md:w-[420px] flex-shrink-0 bg-spider-black rounded-2xl p-7 border border-white/10 flex flex-col justify-between transition-all duration-300 hover:border-spider-red/60 hover:shadow-[0_0_30px_rgba(229,57,53,0.25)] hover:-translate-y-1.5 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex gap-1 text-spider-red">
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-spider-red/10 border border-spider-red/20 text-spider-red font-semibold flex items-center gap-1.5">
+                                <i class="fas fa-shield-halved text-[10px]"></i> CNB Esports
+                            </span>
+                        </div>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed italic relative">
+                            <i class="fas fa-quote-left text-spider-red/20 text-xl absolute -top-2 -left-2"></i>
+                            <span class="relative z-10 pl-4 block">
+                                "A narração do Rian é diferenciada demais! Tem muita energia, emoção e consegue deixar cada round ainda mais insano. Dá gosto de acompanhar uma partida narrada por ele. Parabéns pelo trabalho e continue nessa pegada! 💥🙌"
+                            </span>
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-white/5 flex items-center gap-4">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=150&auto=format&fit=crop&q=80" alt="Comercial CNB" class="w-12 h-12 rounded-full object-cover border-2 border-spider-red shadow-[0_0_12px_rgba(229,57,53,0.4)]">
+                            <div class="absolute -bottom-1 -right-1 bg-spider-red text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px]">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-white text-base group-hover:text-spider-red transition-colors">
+                                Comercial CNB
+                            </h4>
+                            <p class="text-xs text-gray-400 font-medium">
+                                Setor Comercial • <span class="text-spider-blue font-bold">CNB Esports</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="w-[320px] sm:w-[380px] md:w-[420px] flex-shrink-0 bg-spider-black rounded-2xl p-7 border border-white/10 flex flex-col justify-between transition-all duration-300 hover:border-spider-blue/60 hover:shadow-[0_0_30px_rgba(21,101,192,0.25)] hover:-translate-y-1.5 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex gap-1 text-spider-red">
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-spider-blue/10 border border-spider-blue/20 text-spider-blue font-semibold flex items-center gap-1.5">
+                                <i class="fas fa-shield-halved text-[10px]"></i> CNB Esports
+                            </span>
+                        </div>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed italic relative">
+                            <i class="fas fa-quote-left text-spider-blue/20 text-xl absolute -top-2 -left-2"></i>
+                            <span class="relative z-10 pl-4 block">
+                                "A narração do Rian é diferenciada demais! Tem muita energia, emoção e consegue deixar cada round ainda mais insano. Dá gosto de acompanhar uma partida narrada por ele. Parabéns pelo trabalho e continue nessa pegada! 💥🙌"
+                            </span>
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-white/5 flex items-center gap-4">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=150&auto=format&fit=crop&q=80" alt="Comercial CNB" class="w-12 h-12 rounded-full object-cover border-2 border-spider-blue shadow-[0_0_12px_rgba(21,101,192,0.4)]">
+                            <div class="absolute -bottom-1 -right-1 bg-spider-blue text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px]">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-white text-base group-hover:text-spider-blue transition-colors">
+                                Comercial CNB
+                            </h4>
+                            <p class="text-xs text-gray-400 font-medium">
+                                Setor Comercial • <span class="text-spider-blue font-bold">CNB Esports</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= DUPLICAÇÃO PARA LOOP INFINITO ================= -->
+                <!-- Card 1 Duplicado -->
+                <div class="w-[320px] sm:w-[380px] md:w-[420px] flex-shrink-0 bg-spider-black rounded-2xl p-7 border border-white/10 flex flex-col justify-between transition-all duration-300 hover:border-spider-blue/60 hover:shadow-[0_0_30px_rgba(21,101,192,0.25)] hover:-translate-y-1.5 group" aria-hidden="true">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex gap-1 text-spider-red">
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-spider-blue/10 border border-spider-blue/20 text-spider-blue font-semibold flex items-center gap-1.5">
+                                <i class="fas fa-shield-halved text-[10px]"></i> CNB Esports
+                            </span>
+                        </div>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed italic relative">
+                            <i class="fas fa-quote-left text-spider-blue/20 text-xl absolute -top-2 -left-2"></i>
+                            <span class="relative z-10 pl-4 block">
+                                "A narração do Rian é diferenciada demais! Tem muita energia, emoção e consegue deixar cada round ainda mais insano. Dá gosto de acompanhar uma partida narrada por ele. Parabéns pelo trabalho e continue nessa pegada! 💥🙌"
+                            </span>
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-white/5 flex items-center gap-4">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=150&auto=format&fit=crop&q=80" alt="Comercial CNB" class="w-12 h-12 rounded-full object-cover border-2 border-spider-blue shadow-[0_0_12px_rgba(21,101,192,0.4)]">
+                            <div class="absolute -bottom-1 -right-1 bg-spider-blue text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px]">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-white text-base group-hover:text-spider-blue transition-colors">
+                                Comercial CNB
+                            </h4>
+                            <p class="text-xs text-gray-400 font-medium">
+                                Setor Comercial • <span class="text-spider-blue font-bold">CNB Esports</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 Duplicado -->
+                <div class="w-[320px] sm:w-[380px] md:w-[420px] flex-shrink-0 bg-spider-black rounded-2xl p-7 border border-white/10 flex flex-col justify-between transition-all duration-300 hover:border-spider-red/60 hover:shadow-[0_0_30px_rgba(229,57,53,0.25)] hover:-translate-y-1.5 group" aria-hidden="true">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex gap-1 text-spider-red">
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-spider-red/10 border border-spider-red/20 text-spider-red font-semibold flex items-center gap-1.5">
+                                <i class="fas fa-shield-halved text-[10px]"></i> CNB Esports
+                            </span>
+                        </div>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed italic relative">
+                            <i class="fas fa-quote-left text-spider-red/20 text-xl absolute -top-2 -left-2"></i>
+                            <span class="relative z-10 pl-4 block">
+                                "A narração do Rian é diferenciada demais! Tem muita energia, emoção e consegue deixar cada round ainda mais insano. Dá gosto de acompanhar uma partida narrada por ele. Parabéns pelo trabalho e continue nessa pegada! 💥🙌"
+                            </span>
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-white/5 flex items-center gap-4">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=150&auto=format&fit=crop&q=80" alt="Comercial CNB" class="w-12 h-12 rounded-full object-cover border-2 border-spider-red shadow-[0_0_12px_rgba(229,57,53,0.4)]">
+                            <div class="absolute -bottom-1 -right-1 bg-spider-red text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px]">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-white text-base group-hover:text-spider-red transition-colors">
+                                Comercial CNB
+                            </h4>
+                            <p class="text-xs text-gray-400 font-medium">
+                                Setor Comercial • <span class="text-spider-blue font-bold">CNB Esports</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 Duplicado -->
+                <div class="w-[320px] sm:w-[380px] md:w-[420px] flex-shrink-0 bg-spider-black rounded-2xl p-7 border border-white/10 flex flex-col justify-between transition-all duration-300 hover:border-spider-blue/60 hover:shadow-[0_0_30px_rgba(21,101,192,0.25)] hover:-translate-y-1.5 group" aria-hidden="true">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex gap-1 text-spider-red">
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-spider-blue/10 border border-spider-blue/20 text-spider-blue font-semibold flex items-center gap-1.5">
+                                <i class="fas fa-shield-halved text-[10px]"></i> CNB Esports
+                            </span>
+                        </div>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed italic relative">
+                            <i class="fas fa-quote-left text-spider-blue/20 text-xl absolute -top-2 -left-2"></i>
+                            <span class="relative z-10 pl-4 block">
+                                "A narração do Rian é diferenciada demais! Tem muita energia, emoção e consegue deixar cada round ainda mais insano. Dá gosto de acompanhar uma partida narrada por ele. Parabéns pelo trabalho e continue nessa pegada! 💥🙌"
+                            </span>
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-white/5 flex items-center gap-4">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=150&auto=format&fit=crop&q=80" alt="Comercial CNB" class="w-12 h-12 rounded-full object-cover border-2 border-spider-blue shadow-[0_0_12px_rgba(21,101,192,0.4)]">
+                            <div class="absolute -bottom-1 -right-1 bg-spider-blue text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px]">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-white text-base group-hover:text-spider-blue transition-colors">
+                                Comercial CNB
+                            </h4>
+                            <p class="text-xs text-gray-400 font-medium">
+                                Setor Comercial • <span class="text-spider-blue font-bold">CNB Esports</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dica sutil de interação -->
+        <div class="mt-8 text-center text-xs text-gray-500 reveal">
+            <span class="inline-flex items-center gap-2 bg-spider-black/60 px-4 py-1.5 rounded-full border border-white/5">
+                <i class="fas fa-hand-pointer text-spider-red text-xs"></i> Passe o mouse ou segure para pausar a rolagem
+            </span>
         </div>
     </section>
 
@@ -564,10 +884,10 @@
 
                         <div class="mt-10 flex gap-4">
                             <!-- Botão Discord -->
-                            <a href="https://discord.gg/j8KNgNsF" target="_blank" class="w-12 h-12 rounded-full bg-[#5865F2] flex items-center justify-center text-white hover:scale-110 transition-transform shadow-[0_0_15px_rgba(88,101,242,0.3)]">
+                            <a href="https://discord.gg/j8KNgNsF" target="_blank" rel="noopener noreferrer" aria-label="Comunidade Discord" class="w-12 h-12 rounded-full bg-[#5865F2] flex items-center justify-center text-white hover:scale-110 transition-transform shadow-[0_0_15px_rgba(88,101,242,0.3)]">
                                 <i class="fab fa-discord text-xl"></i>
                             </a>
-                            <a href="mailto:seuemail@exemplo.com" class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                            <a href="mailto:contato@rianmiranha.com.br" aria-label="Enviar e-mail para Rian Miranha" class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-white hover:scale-110 transition-transform">
                                 <i class="fas fa-envelope text-xl"></i>
                             </a>
                         </div>
@@ -624,22 +944,22 @@
                 <a href="https://www.instagram.com/rian.miranha/" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Instagram de Rian Miranha"
+                    aria-label="Instagram de Rian Miranha" 
                     class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a>
                 <a href="https://www.tiktok.com/@rianmiranha" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Tiktok de Rian Miranha"
+                    aria-label="Tiktok de Rian Miranha" 
                     class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-tiktok text-xl"></i></a>
                 <a href="https://www.youtube.com/@rianmiranha" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Youtube de Rian Miranha"
+                    aria-label="Youtube de Rian Miranha" 
                     class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-youtube text-xl"></i></a>
                 <a href="https://x.com/RianMiranha" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="X de Rian Miranha"
+                    aria-label="X de Rian Miranha" 
                     class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-x-twitter text-xl"></i></a>
             </div>
             <p class="text-gray-600 text-sm">
@@ -666,6 +986,13 @@
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
         });
 
         // Navbar Background on Scroll
